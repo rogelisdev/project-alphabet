@@ -12,6 +12,35 @@ const images = {
     // sigue con las demás...
 };
 
+const info = {
+    a: "First letter of the alphabet; vowel sound /a/; comes from Greek alpha.",
+    b: "Second letter; consonant sound /b/; from Phoenician beth (house).",
+    c: "Third letter; /k/ or /s/ sound; from Latin/Greek origins.",
+    d: "Fourth letter; consonant sound /d/; from Phoenician daleth.",
+    e: "Fifth letter; vowel sound /e/; comes from Greek epsilon.",
+    f: "Sixth letter; consonant sound /f/; from Phoenician waw.",
+    g: "Seventh letter; consonant sound /g/; developed in Latin from C.",
+    h: "Eighth letter; consonant sound /h/; from Phoenician heth.",
+    i: "Ninth letter; vowel sound /i/; from Greek iota.",
+    j: "Tenth letter; /dʒ/ sound; evolved from the letter I in Latin.",
+    k: "Eleventh letter; consonant sound /k/; from Greek kappa.",
+    l: "Twelfth letter; consonant sound /l/; from Phoenician lamed.",
+    m: "Thirteenth letter; consonant sound /m/; from Phoenician mem.",
+    n: "Fourteenth letter; consonant sound /n/; from Phoenician nun.",
+    o: "Fifteenth letter; vowel sound /o/; from Greek omicron.",
+    p: "Sixteenth letter; consonant sound /p/; from Phoenician pe.",
+    q: "Seventeenth letter; /kw/ sound; always used with U in English.",
+    r: "Eighteenth letter; consonant sound /r/; from Phoenician resh.",
+    s: "Nineteenth letter; consonant sound /s/; from Phoenician shin.",
+    t: "Twentieth letter; consonant sound /t/; from Phoenician taw.",
+    u: "Twenty-first letter; vowel sound /u/; developed from Latin V.",
+    v: "Twenty-second letter; consonant sound /v/; from Latin V/U split.",
+    w: "Twenty-third letter; /w/ sound; called 'double U'.",
+    x: "Twenty-fourth letter; /ks/ sound; from Greek xi.",
+    y: "Twenty-fifth letter; /j/ or vowel sound; from Greek upsilon.",
+    z: "Twenty-sixth letter; /z/ sound; from Greek zeta."
+} 
+
 letters.forEach(letter => {
 
     const isVowel = vowels.includes(letter);
@@ -29,7 +58,7 @@ letters.forEach(letter => {
                 <div class="card-body text-center">
                     <h1 class="card-title">${letter.toUpperCase()}</h1>
                     <p class="card-text">
-                        Information ${letter.toUpperCase()}
+                        ${info[letter]} ${letter.toUpperCase()}
                     </p>
                     <button class="btn btn-primary flip-btn">Voltear</button>
                 </div>
@@ -56,6 +85,6 @@ letters.forEach(letter => {
 document.addEventListener('click', function (e) {
     if (e.target.classList.contains('flip-btn')) {
         const card = e.target.closest('.card-container');
-        card.classList.toggle('flipped'); // 🔥 aquí estaba el error
+        card.classList.toggle('flipped'); 
     }
 });
